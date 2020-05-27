@@ -86,16 +86,18 @@
 
 
 ## Issue Level(Problem Solving)
-- Extract result of opposite industires items using tfid x tfid matrix : level 1
-- Labeling : level 2
+- lv.1 Extract result of opposite industires items using tfid x tfid matrix
+- lv.2 Labeling
     - try1(labeling ambiguity): labeling by only one col.(9 entities) - multilables, multinomialNB
     - try2(detailed standard): divide 3 cols(area, company, interest) - multioutputNB
 
-- Raise Performance : level 2
+- lv.3 Raise Performance
     - add training datas
     - filter noise text
     - select importance features
-- Find 'how to use IBM Watson System' in Korean : level 2
+
+- lv.3 Find 'how to use IBM Watson System' in Korean
+
 
 
 
