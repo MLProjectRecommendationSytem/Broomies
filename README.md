@@ -71,7 +71,7 @@
     - try3: word extraction by frequency
 
 
-- Study tour_type using RandomForest with 417 book datats
+- Study tour_type using RandomForest with 417 book datas
 - Fill 3 lables in rest datas(about 1000 datas) using the model
 
 - Labeling travel datats by area, company, interest
@@ -91,12 +91,17 @@
     - try1(labeling ambiguity): labeling by only one col.(9 entities) - multilables, multinomialNB
     - try2(detailed standard): divide 3 cols(area, company, interest) - multioutputNB
 
-- lv.3 Raise Performance
+- lv.3 Raise Performance Score
     - add training datas
     - filter noise text
     - select importance features
 
 - lv.3 Find 'how to use IBM Watson System' in Korean
+
+## Thingk to do
+- Raise Performance Score
+- Make pre-trial Homepage
+- Upload More item datas
 
 
 
