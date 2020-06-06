@@ -79,6 +79,9 @@
 - Extract result by cosine similarity and opposite label: Input book title , Output best tour title and infos
 
 ## Extra Trial: Watson Personality Insight
+
+![watson](./Image/watson.jpg)
+
 - all the text information from datas
 - make json file for each items
 - vectorize by inputting to the Watson System
@@ -98,7 +101,7 @@
 
 - lv.3 Find 'how to use IBM Watson System' in Korean
 
-## Thingk to do
+## Things to do
 - Raise Performance Score
 - Make pre-trial Homepage
 - Upload More item datas
