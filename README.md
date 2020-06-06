@@ -80,7 +80,7 @@
 
 ## Extra Trial: Watson Personality Insight
 
-![watson](./Image/watson.jpg)
+![Watson](./Image/Watson.jpg)
 
 - all the text information from datas
 - make json file for each items
