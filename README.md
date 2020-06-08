@@ -29,21 +29,29 @@
 ### Data Introduction
 - Book Data(label 1) :
     - site : 교보문고(Kyobo book homepage: http://www.kyobobook.co.kr/)
-        - The biggest bookstore homepage in Korea
-        - Traditionally it has lots of offline bookstore and readers
-        - Recently starts book subscription service in 2019
+    - Book information(Scrapy), Book review(BeautifulSoup), Book keyword(Selenium)
     - columns :ISBN, title, author, book summary, book review, book keyword
     - total : 1507 items, 20 category(genres)
 - Travel Data(label 2) :
     - site : 마이리얼트립(myrealtrip: https://www.myrealtrip.com/)
-        - Traveling start-up in Korea
-        - Targeting young generation who plan their trip by themselves: booking hotels, tour, restaurants
-        - Offers A-Z to travelers
-    - columns : tour_code, tour_city, tour_name, tour_info, tour_review, tour_keyword
+    - Travel information and Review(Beautiful Soup)
+    - columns : tour_code, tour_city, tour_name, tour_info, tour_review
     - total : about 400 tour itmes
 
 ## Modeling Plan(Process)
 ### Crawling
+- Book(사이트 소개)
+	- site : 교보문고(Kyobo book homepage: http://www.kyobobook.co.kr/)
+        - 가장 큰 온라인&오프라인 도서 유통 사이트(The biggest bookstore homepage in Korea)
+        - 전통적으로 가장 많은 오프라인 서점 및 독자 보유(Traditionally it has lots of offline bookstore and readers)
+        - 2019 최근 도서 구독 서비스 시작으로온라인에서도 서비스 제공((Recently starts book subscription service in 2019)
+
+- Travel(사이트 소개)
+	 - site : 마이리얼트립(myrealtrip: https://www.myrealtrip.com/)
+        - 여행서비스 제공하는 한국 스타트업 사이트(Traveling start-up in Korea)
+        - 여행계획을 스스로 짜는 젊은 층이 타겟층((Targeting young generation who plan their trip by themselves)
+        - 호텔, 투어, 식당 등 여행자에게 필요한 모든 것 제공((Offers A-Z to travelers: booking hotels, tour, and restaurants)
+
 
 ### Labeling
 - area(by their destination) :
@@ -66,16 +74,24 @@
 
 ### MultiOutput NB
 - Define the best tour type using MultioutputNB(3 labels) from Book data
-    - try1: Keyword
-    - try2: Noun extraction
-    - try3: word extraction by frequency
+    - try1: Whole Text
+    - try2: Keyword
+    - try3: Noun Extraction
 
 
 - Study tour_type using RandomForest with 417 book datas
 - Fill 3 lables in rest datas(about 1000 datas) using the model
 
-- Labeling travel datats by area, company, interest
-- Study using Tfid * Tfid Matrix: link book item to tour based on type and detailed tour type
+
+### Tfidf Matrix
+- Vectorization
+	- try1: Count vectorization
+		- Offer Output based on simply word frequency: 
+		- Recommendation of priority order: area(2) > company(4) > interest(7)
+	- try2: Tf-idf vectorization
+		- Offer Output based on distinct word that show characteristic of item: 
+		- Recommendation of priority order: interenst(7) > company(4) > are(2)
+- Study using Tfidf * Tfidf Matrix: link book item to tour based on type and detailed tour type
 - Extract result by cosine similarity and opposite label: Input book title , Output best tour title and infos
 
 ## Extra Trial: Watson Personality Insight
