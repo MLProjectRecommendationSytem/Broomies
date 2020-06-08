@@ -1,5 +1,8 @@
 # 브루미Broomie :  Book & Travel Recommendation System
 
+### Work Flow
+![WorkFlow](./Image/WorkFlow.jpg)
+
 #### Create info
 - made by(alphabetical_order) : Bitna Bae, Dokyung Kim, Minhye Kim, Sunghyung Hong
 - function :
@@ -39,6 +42,7 @@
     - total : about 400 tour itmes
 
 ## Modeling Plan(Process)
+
 ### Crawling
 - Book(사이트 소개)
 	- site : 교보문고(Kyobo book homepage: http://www.kyobobook.co.kr/)
